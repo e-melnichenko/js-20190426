@@ -7,7 +7,8 @@
     "build": "webpack",
     "client": "http-server ./public/ -c-1",
     "server": "node server.js",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
