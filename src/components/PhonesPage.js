@@ -19,7 +19,7 @@ export default class PhonesPage extends Component{
       selectedPhone: null,
       basketItems: initialItem,
       query: 'moto',
-      sortField: '',
+      sortField: 'name',
     };
 
 
