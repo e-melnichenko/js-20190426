@@ -2,7 +2,7 @@ import Component from '../Component.js';
 
 import PhonesCatalog from './PhonesCatalog.js';
 import PhoneViewer from './PhoneViewer.js';
-import { getAll, getById } from '../api/phone.js';
+import { getAll, getById } from './api/phone.js';
 import Basket from './Basket.js';
 import Filter from './Filter.js'
 

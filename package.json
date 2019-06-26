@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "client": "http-server ./public/ -c-1",
-    "server": "node server.js"
+    "server": "node server.js",
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,18 @@
   },
   "homepage": "https://github.com/e-melnichenko/js-20190426#readme",
   "dependencies": {
-    "ecstatic": "^3.0.0",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "ecstatic": "^3.3.2",
     "http-server": "^0.11.1",
     "node-static": "^0.7.11",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.7.2"
   }
 }
