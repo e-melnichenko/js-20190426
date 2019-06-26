@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "client": "http-server ./public/ -c-1",
+    "build": "webpack --env.NODE_ENV=production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public",
     "server": "node server.js",
-    "start": "webpack-dev-server --open",
-    "deploy": "gh-pages -d public"
+    "start": "webpack-dev-server --open --hot --env.NODE_ENV=development"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,9 @@
     "webpack-cli": "^3.3.5"
   },
   "devDependencies": {
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.3.0",
     "webpack-dev-server": "^3.7.2"
   }
 }

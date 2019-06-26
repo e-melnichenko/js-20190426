@@ -1,4 +1,5 @@
 import Component from '../Component.js';
+import './basket.css';
 
 export default class Basket extends Component {
   constructor(element, props) {
