@@ -1,14 +1,15 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => {
   const isProduction = env.NODE_ENV === 'production';
   return {
-    mode: 'none',
+    mode: env.NODE_ENV,
     entry: './src/app.js',
     output: {
       path: path.resolve(__dirname, 'public'),
-      filename: 'bundle.js'
+      filename: '[name].[hashname].js'
     },
 
     devtool: isProduction ? false : 'source-map',
@@ -35,12 +36,13 @@ module.exports = env => {
             }
           }
         },
-
-        {
-          test: /\.css$/,
-          use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-        },
       ]
-    }
+    },
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: './src/index.html'
+      }),
+      ]
   };
 }
